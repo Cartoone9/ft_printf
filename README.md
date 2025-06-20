@@ -1,0 +1,63 @@
+<div align="center">
+  <img src="https://i.ibb.co/cmF80PB/image.png" alt="Project score">
+</div>
+
+# ft_printf
+
+This repository contains my ft_printf project, an early assignment from 42 School. The goal was to build a custom (mini) version of the standard C library's printf function. This project was instrumental in solidifying the understanding of variadic arguments, intricate string parsing, and efficient output buffering in C. 
+
+## Usage
+
+This project is only asking for a static library file (.a) and not a working program, to compile you can use:
+
+```Bash
+make
+# or
+make bonus
+```
+
+To run your tests you will need a main, for example:
+
+```C
+#include <stdio.h>
+
+int ft_printf(const char *str, ...);
+
+int main(void)
+{
+    int count_original;
+    int count_ft;
+
+    count_original = printf("Original: Char: %c | String: %s | Int: %i | Hex: %x | Percent: %%\n", 'A', "Test String", 12345, 6789);
+    count_ft = ft_printf("ft_printf: Char: %c | String: %s | Int: %i | Hex: %x | Percent: %%\n", 'A', "Test String", 12345, 6789) - 1; // minus one to account for the extra char: "Original" vs "ft_printf"
+    printf("Original count: %d, ft_printf count: %d\n\n", count_original, count_ft);
+
+    count_original = printf("Original Bonus: String : '%-10s' | Int: '%+05d' | Hex: '%#x'\n", "Hello", 42, 255);
+    count_ft = ft_printf("ft_printf Bonus: String : '%-10s' | Int: '%+05d' | Hex: '%#x'\n", "Hello", 42, 255) - 1; // minus one to account for the extra char: "Original" vs "ft_printf"
+    printf("Original Bonus count: %d, ft_printf Bonus count: %d\n", count_original, count_ft);
+
+    return (0);
+}
+```
+
+To compile, ensure that both main.c and libftprintf.a are present in the current directory, then run the following command:
+```Bash
+cc -Wall -Werror -Wextra main.c -L. -lftprintf -o ft_printf
+```
+
+## Examples
+
+Using the main provided above: 
+![Ft_printf example](https://i.ibb.co/GfhMx7dc/image.png)
+
+## Note on Project State
+
+All projects from my 42 cursus are preserved in their state immediately following their final evaluation. While they may contain mistakes or stylistic errors, I've chosen not to alter them. This approach provides a clear and authentic timeline of my progress and learning journey as a programmer.
+
+## Notable errors
+
+This code relies on undefined behavior when handling variadic arguments. In my implementation, I repeatedly call va_arg on the same va_list to iterate over the arguments. While this appears to work on Ubuntu (where each call to va_arg advances the list as expected), it is not portable and may fail on other systems like macOS, where the behavior can differ. The correct approach is to use va_copy to create a copy of the va_list when multiple iterations are needed. This ensures consistent and defined behavior across different platforms.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
