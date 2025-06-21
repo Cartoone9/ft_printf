@@ -58,6 +58,8 @@ All projects from my 42 cursus are preserved in their state immediately followin
 
 This code relies on undefined behavior when handling variadic arguments. In my implementation, I repeatedly call va_arg on the same va_list to iterate over the arguments. While this appears to work on Ubuntu (where each call to va_arg advances the list as expected), it is not portable and may fail on other systems like macOS, where the behavior can differ. The correct approach is to use va_copy to create a copy of the va_list when multiple iterations are needed. This ensures consistent and defined behavior across different platforms.
 
+There's also unprotected malloc() in the following functions: ft_nullstr, ft_sixtreculn_fill, ft_conv_prct.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
