@@ -43,7 +43,7 @@ To compile an executable, ensure that both `main.c` and `libftprintf.a` are pres
 cc -Wall -Werror -Wextra main.c -L. -lftprintf -o ft_printf
 ```
 
-## Examples
+## Example
 
 Using the main provided above: 
 ![Ft_printf example](https://i.ibb.co/GfhMx7dc/image.png)
