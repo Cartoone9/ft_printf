@@ -45,7 +45,7 @@ cc -Wall -Werror -Wextra main.c -L. -lftprintf -o ft_printf
 
 ## Example
 
-Using the main provided above: 
+Using the main provided above:  
 ![Ft_printf example](https://i.ibb.co/GfhMx7dc/image.png)
 
 ## Note on Project State
