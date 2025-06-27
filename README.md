@@ -6,6 +6,15 @@
 
 This repository contains my ft_printf project, an early assignment from 42 School. The goal was to build a custom (mini) version of the standard C library's printf function. This project was instrumental in solidifying my understanding of variadic arguments, intricate string parsing, and efficient output buffering in C. 
 
+## Table of Contents
+
+- [About](#ft_printf)
+- [Usage](#usage)
+- [Example](#example)
+- [Note on Project State](#note-on-project-state)
+- [Known Issues & Fix Suggestions](#known-issues--fix-suggestions)
+- [License](#license)
+- 
 ## Usage
 
 This project is only asking for a static library file (`.a`) and not a working program, to compile it you can use:
