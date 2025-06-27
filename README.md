@@ -14,7 +14,7 @@ This repository contains my ft_printf project, an early assignment from 42 Schoo
 - [Note on Project State](#note-on-project-state)
 - [Known Issues & Fix Suggestions](#known-issues--fix-suggestions)
 - [License](#license)
-- 
+
 ## Usage
 
 This project is only asking for a static library file (`.a`) and not a working program, to compile it you can use:
